@@ -3,7 +3,7 @@ import { narrate, stopNarration } from '../../utils/audio.js';
 
 /* Narration — exact matches to audioMap keys */
 const SLIDE_AUDIO = [
-  "Mei Ling loves collecting stickers. She has so many, she needs to organise them! Can you help her count?",
+  "Emma loves collecting stickers. She has so many, she needs to organise them! Can you help her count?",
   "She puts them into albums. Each album holds one hundred stickers. She has three albums — that is 300 stickers!",
   "She also has four strips of ten stickers. That is 40 more stickers!",
   "And she has 7 single stickers too. These are the ones — the last digits!",
@@ -37,7 +37,7 @@ function IllustrationMeiLing() {
       <rect x="450" y="72" width="90" height="28" rx="9" fill="white"/>
       <polygon points="450,86 440,92 450,98" fill="white"/>
       <text x="495" y="90" textAnchor="middle" fill="#1e0f4e" fontSize="10" fontWeight="800">My stickers!</text>
-      <text x="280" y="196" textAnchor="middle" fill="#f5c518" fontSize="13" fontWeight="900">Meet Mei Ling — Sticker Collector!</text>
+      <text x="280" y="196" textAnchor="middle" fill="#f5c518" fontSize="13" fontWeight="900">Meet Emma — Sticker Collector!</text>
       <text x="280" y="213" textAnchor="middle" fill="rgba(255,255,255,.4)" fontSize="9.5">She organises her stickers into hundreds, tens and ones</text>
     </svg>
   );
@@ -157,7 +157,7 @@ function IllustrationExpandedForm() {
 }
 
 const SLIDES = [
-  { Illustration: IllustrationMeiLing,      title: "Mei Ling's Sticker Collection",  text: "Mei Ling loves collecting stickers. She has so many, she needs to organise them! Can you help her count?",                               highlight: null,                          mascot: "Let's count with Mei Ling! 📚" },
+  { Illustration: IllustrationMeiLing,      title: "Emma's Sticker Collection",      text: "Emma loves collecting stickers. She has so many, she needs to organise them! Can you help her count?",                               highlight: null,                          mascot: "Let's count with Emma! 📚" },
   { Illustration: IllustrationHundredAlbums,title: "Hundreds — Albums of 100",        text: "She puts them into albums. Each album holds one hundred stickers. She has three albums — that is 300 stickers!",                           highlight: "✦ 3 × 100 = 300 stickers ✦", mascot: "3 albums = 300! 📁" },
   { Illustration: IllustrationTenStrips,    title: "Tens — Strips of 10",             text: "She also has four strips of ten stickers. That is 40 more stickers!",                                                                       highlight: "✦ 4 × 10 = 40 stickers ✦",   mascot: "4 strips = 40! 🟩" },
   { Illustration: IllustrationOnes,         title: "Ones — Single Stickers",          text: "And she has 7 single stickers too. These are the ones — the last digits!",                                                                  highlight: "✦ 7 × 1 = 7 stickers ✦",     mascot: "7 singles! ⭐" },

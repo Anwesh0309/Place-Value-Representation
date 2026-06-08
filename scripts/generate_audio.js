@@ -49,7 +49,7 @@ const phrases = [
   { text: "Watch what happens when we group the marbles together.", style: 'statement' },
 
   // ── STORY — one per slide ──
-  { text: "Mei Ling loves collecting stickers. She has so many, she needs to organise them! Can you help her count?", style: 'statement' },
+  { text: "Emma loves collecting stickers. She has so many, she needs to organise them! Can you help her count?", style: 'statement' },
   { text: "She puts them into albums. Each album holds one hundred stickers. She has three albums — that is 300 stickers!", style: 'statement' },
   { text: "She also has four strips of ten stickers. That is 40 more stickers!", style: 'statement' },
   { text: "And she has 7 single stickers too. These are the ones — the last digits!", style: 'statement' },

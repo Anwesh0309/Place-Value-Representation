@@ -44,7 +44,7 @@ export default function IntroScreen({ onStart, audioEnabled }) {
 
       {/* Description */}
       <p className="intro-desc">
-        Join Mei Ling on a journey to explore hundreds, tens, and ones through stories, simulations, and fun games!
+        Join Emma on a journey to explore hundreds, tens, and ones through stories, simulations, and fun games!
       </p>
 
       {/* Journey Card */}

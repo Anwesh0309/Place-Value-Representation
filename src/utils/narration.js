@@ -24,7 +24,7 @@ export function wonderNarration() {
 
 // Per-slide story narrations (index matches SLIDES array in StoryPhase)
 export const STORY_SLIDE_NARRATIONS = [
-  say("Mei Ling loves collecting stickers. She has so many, she needs to organise them! Can you help her count?"),
+  say("Emma loves collecting stickers. She has so many, she needs to organise them! Can you help her count?"),
   say("She puts them into albums. Each album holds one hundred stickers. She has three albums — that is 300 stickers!"),
   say("She also has four strips of ten stickers. That is 40 more stickers!"),
   say("And she has 7 single stickers too. These are the ones — the last digits!"),

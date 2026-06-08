@@ -77,7 +77,7 @@ function randN(world) {
 }
 
 // ─── Singapore names & objects ─────────────────────────────────────────────
-const NAMES   = ['Wei Ming','Priya','Raju','Ahmad','Mei Ling','Jun Hao','Siti','Ryan','Xiao Ling','Mrs Tan'];
+const NAMES   = ['Liam','Sofia','Noah','Oliver','Emma','Lucas','Mia','Ethan','Lily','Mrs Brown'];
 const OBJECTS = ['stickers','marbles','library books','stamps','seashells','toy cars','postcards','beads','biscuits','trading cards'];
 
 // ─── Q1: Place value digit value ───────────────────────────────────────────
