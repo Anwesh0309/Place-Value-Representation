@@ -47,8 +47,8 @@ export default function ReflectPhase({ state, onReset, audioEnabled }) {
           <div className="mascot-avatar thinking" style={{ width: 64, height: 64, fontSize: '2rem' }}>🐻</div>
           <div className="mascot-bubble">Teach me what you learned! 🤔</div>
         </div>
-        <h2 className="title-md text-yellow text-center" style={{ marginBottom: 4 }}>Quick Review</h2>
-        <p className="text-muted text-center" style={{ marginBottom: 16, fontWeight: 600, fontSize: '0.85rem' }}>
+        <h2 className="title-md text-yellow text-center" style={{ marginBottom: 6, fontSize: '1.5rem', fontWeight: 900 }}>Quick Review</h2>
+        <p className="text-muted text-center" style={{ marginBottom: 16, fontWeight: 800, fontSize: '0.95rem' }}>
           {qIdx + 1} of {REVIEW_QS.length}
         </p>
         <div className="prog-wrap" style={{ marginBottom: 16 }}>
@@ -75,8 +75,8 @@ export default function ReflectPhase({ state, onReset, audioEnabled }) {
           <div className="mascot-avatar" style={{ width: 64, height: 64, fontSize: '2rem' }}>🐻</div>
           <div className="mascot-bubble">{correct}/3 correct! 🎉</div>
         </div>
-        <h2 className="title-md text-yellow text-center" style={{ marginBottom: 4 }}>How confident do you feel?</h2>
-        <p className="text-muted text-center" style={{ marginBottom: 20, fontWeight: 600, fontSize: '0.85rem' }}>
+        <h2 className="title-md text-yellow text-center" style={{ marginBottom: 6, fontSize: '1.5rem', fontWeight: 900 }}>How confident do you feel?</h2>
+        <p className="text-muted text-center" style={{ marginBottom: 20, fontWeight: 800, fontSize: '0.95rem' }}>
           About place value and numbers to 1000
         </p>
         <div className="confidence-row">
@@ -106,13 +106,13 @@ export default function ReflectPhase({ state, onReset, audioEnabled }) {
       </div>
 
       <div className="certificate">
-        <div style={{ fontSize: '0.68rem', fontWeight: 700, color: 'rgba(255,255,255,0.35)', textTransform: 'uppercase', letterSpacing: 1, marginBottom: 8 }}>
+        <div style={{ fontSize: '0.75rem', fontWeight: 900, color: 'rgba(255,255,255,0.45)', textTransform: 'uppercase', letterSpacing: 2, marginBottom: 8 }}>
           Certificate of Completion
         </div>
-        <h2 style={{ fontFamily: 'var(--font)', fontSize: '1.4rem', fontWeight: 900, color: 'var(--yellow)', marginBottom: 4 }}>
+        <h2 style={{ fontFamily: 'var(--font)', fontSize: '1.6rem', fontWeight: 900, color: 'var(--yellow)', marginBottom: 6 }}>
           🌟 Numbers to 1000 🌟
         </h2>
-        <p style={{ fontSize: '0.78rem', color: 'rgba(255,255,255,0.4)', fontWeight: 600, marginBottom: 16 }}>
+        <p style={{ fontSize: '0.85rem', color: 'rgba(255,255,255,0.5)', fontWeight: 800, marginBottom: 18 }}>
           Place Value Representation · Singapore MOE Primary 2
         </p>
 
@@ -129,10 +129,10 @@ export default function ReflectPhase({ state, onReset, audioEnabled }) {
             { icon: '✅', val: totalCorrect,    lbl: 'Correct' },
           ].map(s => (
             <div key={s.lbl} style={{ textAlign: 'center' }}>
-              <div style={{ fontFamily: 'var(--font)', fontSize: '1.3rem', fontWeight: 900, color: 'var(--yellow)' }}>
+              <div style={{ fontFamily: 'var(--font)', fontSize: '1.5rem', fontWeight: 900, color: 'var(--yellow)' }}>
                 {s.icon} {s.val}
               </div>
-              <div style={{ fontSize: '0.66rem', color: 'rgba(255,255,255,0.35)', fontWeight: 700 }}>{s.lbl}</div>
+              <div style={{ fontSize: '0.72rem', color: 'rgba(255,255,255,0.45)', fontWeight: 800, textTransform: 'uppercase', letterSpacing: '0.5px' }}>{s.lbl}</div>
             </div>
           ))}
         </div>

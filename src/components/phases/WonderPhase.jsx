@@ -46,7 +46,7 @@ export default function WonderPhase({ onComplete, audioEnabled }) {
       >
         {stage === 0 ? (
           <>
-            <p style={{ fontSize: '0.82rem', color: 'rgba(255,255,255,0.55)', marginBottom: 12, textAlign: 'center', fontWeight: 600 }}>
+            <p style={{ fontSize: '0.95rem', color: 'rgba(255,255,255,0.7)', marginBottom: 12, textAlign: 'center', fontWeight: 800 }}>
               Tap to see what happens! 👇
             </p>
             <div className="marble-grid">
@@ -61,7 +61,7 @@ export default function WonderPhase({ onComplete, audioEnabled }) {
           </>
         ) : (
           <>
-            <p style={{ fontSize: '0.82rem', color: 'rgba(255,255,255,0.55)', marginBottom: 16, textAlign: 'center', fontWeight: 600 }}>
+            <p style={{ fontSize: '0.95rem', color: 'rgba(255,255,255,0.7)', marginBottom: 16, textAlign: 'center', fontWeight: 800 }}>
               The marbles group into hundreds, tens, and ones! ✨
             </p>
             <div style={{ display: 'flex', gap: 20, justifyContent: 'center', flexWrap: 'wrap' }}>
@@ -87,9 +87,9 @@ export default function WonderPhase({ onComplete, audioEnabled }) {
               ))}
             </div>
             <div style={{
-              marginTop: 16, textAlign: 'center',
-              fontFamily: 'var(--font)', fontSize: '1.5rem', fontWeight: 900, color: '#fff',
-              letterSpacing: 3,
+              marginTop: 18, textAlign: 'center',
+              fontFamily: 'var(--font)', fontSize: '1.8rem', fontWeight: 900, color: '#fff',
+              letterSpacing: 4,
             }}>
               300 + 40 + 7 = <span style={{ color: 'var(--yellow)' }}>347</span>
             </div>

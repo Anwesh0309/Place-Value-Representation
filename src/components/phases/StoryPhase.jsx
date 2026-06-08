@@ -256,41 +256,42 @@ export default function StoryPhase({ onComplete, audioEnabled }) {
 
           {/* Card body */}
           <div style={{ padding: '16px 22px 18px' }}>
-            {/* Gold title */}
+            {/* Gold title — large, bold */}
             <h2 style={{
               fontFamily: 'var(--font)',
-              fontSize: '1.08rem',
+              fontSize: '1.2rem',
               fontWeight: 900,
               color: '#f5c518',
-              marginBottom: 8,
+              marginBottom: 10,
               lineHeight: 1.2,
             }}>
               {s.title}
             </h2>
 
-            {/* Body text */}
+            {/* Body text — large and readable for children */}
             <p style={{
-              fontSize: '0.93rem',
-              lineHeight: 1.72,
-              color: 'rgba(255,255,255,0.88)',
-              fontWeight: 600,
-              marginBottom: s.highlight ? 10 : 12,
+              fontSize: '1.05rem',
+              lineHeight: 1.8,
+              color: 'rgba(255,255,255,0.95)',
+              fontWeight: 700,
+              marginBottom: s.highlight ? 12 : 14,
             }}>
               {s.text}
             </p>
 
-            {/* Highlight pill */}
+            {/* Highlight pill — extra bold */}
             {s.highlight && (
               <div style={{
                 background: 'rgba(109,40,217,0.4)',
-                border: '1px solid rgba(109,40,217,0.55)',
-                borderRadius: 10,
-                padding: '8px 16px',
+                border: '2px solid rgba(109,40,217,0.6)',
+                borderRadius: 12,
+                padding: '10px 18px',
                 textAlign: 'center',
                 color: '#fff',
-                fontWeight: 800,
-                fontSize: '0.88rem',
+                fontWeight: 900,
+                fontSize: '1rem',
                 marginBottom: 14,
+                letterSpacing: '0.3px',
               }}>
                 {s.highlight}
               </div>

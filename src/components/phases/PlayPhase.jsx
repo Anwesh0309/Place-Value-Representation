@@ -27,14 +27,14 @@ function WorldCompleteScreen({ w, score, currentWorld, audioEnabled, onRetry, on
     <div className="play-phase">
       <div className="card world-complete-card">
         <span className="wc-emoji">{w.emoji}</span>
-        <h2 style={{ fontFamily: 'var(--font)', fontSize: '1.6rem', fontWeight: 900, marginBottom: 8 }}>
+        <h2 style={{ fontFamily: 'var(--font)', fontSize: '1.8rem', fontWeight: 900, marginBottom: 10 }}>
           {w.name} Complete!
         </h2>
         <div className="wc-stars">{starsDisplay(stars)}</div>
-        <div style={{ fontFamily: 'var(--font)', fontSize: '1.15rem', fontWeight: 800, marginBottom: 8 }}>
+        <div style={{ fontFamily: 'var(--font)', fontSize: '1.4rem', fontWeight: 900, marginBottom: 10 }}>
           Score: <span style={{ color: 'var(--yellow)' }}>{score}/10</span>
         </div>
-        <div style={{ fontSize: '0.88rem', fontWeight: 700, marginBottom: 20,
+        <div style={{ fontSize: '1rem', fontWeight: 800, marginBottom: 22,
           color: stars > 0 ? 'var(--green-light)' : 'var(--red-light)' }}>
           {stars === 3 ? '🏆 Perfect!' : stars === 2 ? '🎉 Great job!' : stars === 1 ? '👍 Good effort!' : '⚠️ Need 5/10 to unlock next world.'}
         </div>

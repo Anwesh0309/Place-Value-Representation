@@ -37,7 +37,7 @@ export default function IntroScreen({ onStart, audioEnabled }) {
         <h1 className="intro-title">
           Numbers to <span className="accent">1000</span>
         </h1>
-        <div style={{ fontSize: '0.78rem', fontWeight: 700, color: 'rgba(255,255,255,0.4)', textAlign: 'center', marginTop: 4, textTransform: 'uppercase', letterSpacing: '1px' }}>
+        <div className="intro-subtitle" style={{ marginTop: 6 }}>
           Place Value Representation
         </div>
       </div>

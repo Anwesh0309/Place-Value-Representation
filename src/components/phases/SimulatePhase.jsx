@@ -58,10 +58,10 @@ export default function SimulatePhase({ onComplete, audioEnabled, simStationsCom
       zIndex: 1,
     }}>
       <div style={{ textAlign: 'center', marginBottom: 14 }}>
-        <h2 style={{ fontFamily: 'var(--font)', fontSize: '1.25rem', fontWeight: 900, color: 'var(--yellow)', marginBottom: 4 }}>
+        <h2 style={{ fontFamily: 'var(--font)', fontSize: '1.5rem', fontWeight: 900, color: 'var(--yellow)', marginBottom: 6 }}>
           Simulation Stations
         </h2>
-        <p style={{ fontSize: '0.8rem', fontWeight: 600, color: 'rgba(255,255,255,0.42)' }}>
+        <p style={{ fontSize: '0.9rem', fontWeight: 800, color: 'rgba(255,255,255,0.55)' }}>
           Concrete → Pictorial → Abstract
         </p>
       </div>
@@ -83,10 +83,10 @@ export default function SimulatePhase({ onComplete, audioEnabled, simStationsCom
 
       <div className="card" key={activeStation} style={{ animation: 'slideUp 0.3s ease' }}>
         <div style={{ marginBottom: 14 }}>
-          <div style={{ fontFamily: 'var(--font)', fontWeight: 900, fontSize: '0.98rem', color: 'var(--yellow)', marginBottom: 4 }}>
+          <div style={{ fontFamily: 'var(--font)', fontWeight: 900, fontSize: '1.15rem', color: 'var(--yellow)', marginBottom: 5 }}>
             Station {activeStation + 1}: {stationInfo.label}
           </div>
-          <div style={{ fontSize: '0.76rem', color: 'rgba(255,255,255,0.42)', fontWeight: 600 }}>
+          <div style={{ fontSize: '0.88rem', color: 'rgba(255,255,255,0.6)', fontWeight: 700 }}>
             {stationInfo.desc}
           </div>
         </div>
