@@ -4,7 +4,12 @@ import { WORLDS } from '../../data/questionBank.js';
 import { BADGES } from '../../utils/badgeEngine.js';
 import { calcStars, starsDisplay } from '../../utils/scoring.js';
 import { narrate, stopNarration } from '../../utils/audio.js';
-import { reflectNarration } from '../../utils/narration.js';
+import {
+  reflectQ1Narration,
+  reflectQ2Narration,
+  reflectQ3Narration,
+  completionNarration,
+} from '../../utils/narration.js';
 
 const REVIEW_QS = [
   { q: 'In 536, which digit is in the hundreds place?', opts: ['5','3','6','53'], ans: '5' },
@@ -12,7 +17,7 @@ const REVIEW_QS = [
   { q: '"Nine hundred and five" in numerals = ?',        opts: ['905','950','915','9005'], ans: '905' },
 ];
 
-export default function ReflectPhase({ state, onReset, audioEnabled }) {
+export default function ReflectPhase({ state = {}, onReset, audioEnabled }) {
   const [step, setStep] = useState(0);
   const [qIdx, setQIdx] = useState(0);
   const [answers, setAnswers] = useState([]);
@@ -49,10 +54,10 @@ export default function ReflectPhase({ state, onReset, audioEnabled }) {
     else setTimeout(() => setStep(1), 500);
   };
 
-  const totalXP = state.xp;
-  const totalCorrect = state.worldScores.reduce((s, w) => s + (w ?? 0), 0);
+  const totalXP = state?.xp ?? 0;
+  const totalCorrect = (state?.worldScores ?? []).reduce((s, w) => s + (w ?? 0), 0);
   const pct = Math.round((totalCorrect / 100) * 100);
-  const earnedBadges = BADGES.filter(b => state.badges.includes(b.id));
+  const earnedBadges = BADGES.filter(b => (state?.badges ?? []).includes(b.id));
 
   /* ── Step 0: Review quiz ── */
   if (step === 0) {
