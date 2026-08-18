@@ -183,138 +183,154 @@ export default function StoryPhase({ onComplete, audioEnabled }) {
   const s = SLIDES[slide];
 
   return (
-    /* Full-height wrapper, centers the card vertically */
+    /* Full-height wrapper, centers the card vertically without scrolling */
     <div style={{
-      minHeight: 'calc(100vh - 58px)',
+      minHeight: 'calc(100vh - 65px)',
+      maxHeight: 'calc(100vh - 65px)',
       display: 'flex',
       flexDirection: 'column',
       alignItems: 'center',
       justifyContent: 'center',
-      padding: '12px 20px 16px',
+      padding: '10px 20px 14px',
       boxSizing: 'border-box',
     }}>
 
-      {/* Narrow story card — max 620px, matches reference */}
+      {/* Main Container — max 860px */}
       <div style={{
         width: '100%',
-        maxWidth: 640,
+        maxWidth: 860,
         display: 'flex',
         flexDirection: 'column',
-        gap: 0,
+        gap: 12,
       }}>
 
-        {/* Progress bar + counter — above card */}
+        {/* 1. Progress bar + counter — above card */}
         <div style={{
-          display: 'flex', alignItems: 'center', gap: 10,
-          marginBottom: 10,
+          display: 'flex', alignItems: 'center', gap: 12,
+          padding: '0 4px',
         }}>
           <div style={{
-            flex: 1, height: 4,
-            background: 'rgba(255,255,255,0.1)',
+            flex: 1, height: 6,
+            background: 'rgba(255,255,255,0.12)',
             borderRadius: 99, overflow: 'hidden',
           }}>
             <div style={{
               height: '100%', borderRadius: 99,
               width: `${((slide + 1) / SLIDES.length) * 100}%`,
-              background: 'linear-gradient(90deg,#6d28d9,#f5c518)',
+              background: 'linear-gradient(90deg,#8b5cf6,#f5c518)',
               transition: 'width 0.4s ease',
             }} />
           </div>
           <span style={{
-            fontSize: '0.74rem', fontWeight: 700,
-            color: 'rgba(255,255,255,0.45)', whiteSpace: 'nowrap',
+            fontSize: '0.88rem', fontWeight: 900,
+            color: 'rgba(255,255,255,0.75)', whiteSpace: 'nowrap',
           }}>
             {slide + 1} / {SLIDES.length}
           </span>
         </div>
 
-        {/* Story card */}
+        {/* 2. Side-by-side Story Card (Matching SS layout) */}
         <div
           key={slide}
           style={{
-            background: 'rgba(26, 10, 72, 0.88)',
-            border: '1px solid rgba(255,255,255,0.1)',
-            borderRadius: 18,
+            background: 'rgba(30, 16, 75, 0.88)',
+            backdropFilter: 'blur(20px)',
+            border: '1.5px solid rgba(255,255,255,0.16)',
+            borderRadius: 24,
             overflow: 'hidden',
-            boxShadow: '0 12px 48px rgba(0,0,0,0.55)',
+            boxShadow: '0 16px 48px rgba(0,0,0,0.55)',
+            display: 'flex',
+            flexDirection: 'row',
+            minHeight: 340,
             animation: 'slideUp 0.3s ease',
           }}
         >
-          {/* Illustration — rounded top, fixed height */}
+          {/* Left Column — Illustration */}
           <div style={{
-            width: '100%',
-            height: 220,
+            width: '46%',
             background: '#0a0520',
             overflow: 'hidden',
             display: 'flex',
             alignItems: 'center',
             justifyContent: 'center',
-            borderRadius: '18px 18px 0 0',
+            borderRight: '1px solid rgba(255,255,255,0.1)',
+            padding: 12,
+            boxSizing: 'border-box',
           }}>
             <s.Illustration />
           </div>
 
-          {/* Card body */}
-          <div style={{ padding: '16px 22px 18px' }}>
-            {/* Gold title — large, bold */}
-            <h2 style={{
-              fontFamily: 'var(--font)',
-              fontSize: '1.2rem',
-              fontWeight: 900,
-              color: '#f5c518',
-              marginBottom: 10,
-              lineHeight: 1.2,
-            }}>
-              {s.title}
-            </h2>
-
-            {/* Body text — large and readable for children */}
-            <p style={{
-              fontSize: '1.05rem',
-              lineHeight: 1.8,
-              color: 'rgba(255,255,255,0.95)',
-              fontWeight: 700,
-              marginBottom: s.highlight ? 12 : 14,
-            }}>
-              {s.text}
-            </p>
-
-            {/* Highlight pill — extra bold */}
-            {s.highlight && (
-              <div style={{
-                background: 'rgba(109,40,217,0.4)',
-                border: '2px solid rgba(109,40,217,0.6)',
-                borderRadius: 12,
-                padding: '10px 18px',
-                textAlign: 'center',
-                color: '#fff',
+          {/* Right Column — Content & Mascot */}
+          <div style={{
+            width: '54%',
+            padding: '24px 28px',
+            display: 'flex',
+            flexDirection: 'column',
+            justifyContent: 'space-between',
+            boxSizing: 'border-box',
+          }}>
+            <div>
+              {/* Gold title — large, bold */}
+              <h2 style={{
+                fontFamily: 'var(--font)',
+                fontSize: '1.45rem',
                 fontWeight: 900,
-                fontSize: '1rem',
-                marginBottom: 14,
-                letterSpacing: '0.3px',
+                color: '#f5c518',
+                margin: '0 0 10px 0',
+                lineHeight: 1.25,
               }}>
-                {s.highlight}
-              </div>
-            )}
+                {s.title}
+              </h2>
 
-            {/* Mascot row */}
-            <div style={{ display: 'flex', alignItems: 'center', gap: 10 }}>
+              {/* Body text — large and readable */}
+              <p style={{
+                fontSize: '1.1rem',
+                lineHeight: 1.6,
+                color: '#ffffff',
+                fontWeight: 800,
+                margin: '0 0 14px 0',
+              }}>
+                {s.text}
+              </p>
+
+              {/* Highlight pill box */}
+              {s.highlight && (
+                <div style={{
+                  background: 'rgba(45, 20, 95, 0.85)',
+                  border: '1.5px solid rgba(245, 197, 24, 0.4)',
+                  borderRadius: 14,
+                  padding: '10px 16px',
+                  textAlign: 'center',
+                  color: '#f5c518',
+                  fontWeight: 900,
+                  fontSize: '1.05rem',
+                  letterSpacing: '0.4px',
+                  boxShadow: '0 4px 14px rgba(0,0,0,0.3)',
+                }}>
+                  {s.highlight}
+                </div>
+              )}
+            </div>
+
+            {/* Mascot row at bottom right */}
+            <div style={{ display: 'flex', alignItems: 'center', gap: 10, marginTop: 12 }}>
               <div style={{
-                width: 36, height: 36, borderRadius: '50%',
+                width: 42, height: 42, borderRadius: '50%',
                 background: 'linear-gradient(135deg,#f97316,#f59e0b)',
                 display: 'flex', alignItems: 'center', justifyContent: 'center',
-                fontSize: '1.25rem', flexShrink: 0,
-                boxShadow: '0 2px 10px rgba(249,115,22,.4)',
+                fontSize: '1.45rem', flexShrink: 0,
+                boxShadow: '0 3px 12px rgba(249,115,22,.45)',
+                border: '2px solid #fbbf24',
               }}>🐻</div>
               <div style={{
-                background: '#fff',
+                background: '#ffffff',
                 color: '#0d0620',
-                borderRadius: '12px 12px 12px 3px',
-                padding: '6px 12px',
-                fontWeight: 700,
-                fontSize: '0.8rem',
-                lineHeight: 1.4,
-                boxShadow: '0 2px 8px rgba(0,0,0,0.2)',
+                borderRadius: '14px 14px 14px 3px',
+                padding: '8px 14px',
+                fontWeight: 900,
+                fontSize: '0.92rem',
+                lineHeight: 1.35,
+                boxShadow: '0 3px 10px rgba(0,0,0,0.25)',
               }}>
                 {s.mascot}
               </div>
@@ -322,43 +338,43 @@ export default function StoryPhase({ onComplete, audioEnabled }) {
           </div>
         </div>
 
-        {/* Navigation row — OUTSIDE card */}
+        {/* 3. Navigation controls — OUTSIDE card */}
         <div style={{
           display: 'flex',
           alignItems: 'center',
           justifyContent: 'space-between',
-          marginTop: 14,
-          padding: '0 2px',
+          marginTop: 4,
+          padding: '0 4px',
         }}>
           {/* ← Back */}
           <button
             onClick={() => goSlide(Math.max(0, slide - 1))}
             disabled={slide === 0}
             style={{
-              display: 'flex', alignItems: 'center', gap: 5,
-              padding: '9px 20px', borderRadius: 10,
+              display: 'flex', alignItems: 'center', gap: 6,
+              padding: '10px 22px', borderRadius: 999,
               border: '1.5px solid rgba(255,255,255,0.2)',
               background: 'rgba(255,255,255,0.08)',
-              color: slide === 0 ? 'rgba(255,255,255,0.22)' : 'rgba(255,255,255,0.85)',
-              fontFamily: 'var(--font)', fontWeight: 800, fontSize: '0.85rem',
+              color: slide === 0 ? 'rgba(255,255,255,0.25)' : '#ffffff',
+              fontFamily: 'var(--font)', fontWeight: 900, fontSize: '0.95rem',
               cursor: slide === 0 ? 'not-allowed' : 'pointer',
-              transition: 'all .18s',
+              transition: 'all .18s ease',
             }}
           >
             ← Back
           </button>
 
           {/* Dot indicators */}
-          <div style={{ display: 'flex', gap: 7, alignItems: 'center' }}>
+          <div style={{ display: 'flex', gap: 8, alignItems: 'center' }}>
             {SLIDES.map((_, i) => (
               <div
                 key={i}
                 onClick={() => goSlide(i)}
                 style={{
-                  width: i === slide ? 24 : 8, height: 8,
-                  borderRadius: 4,
-                  background: i === slide ? '#f5c518' : i < slide ? 'var(--green)' : 'rgba(255,255,255,0.2)',
-                  cursor: 'pointer', transition: 'all .3s', flexShrink: 0,
+                  width: i === slide ? 26 : 9, height: 9,
+                  borderRadius: 5,
+                  background: i === slide ? '#f5c518' : i < slide ? 'var(--green)' : 'rgba(255,255,255,0.25)',
+                  cursor: 'pointer', transition: 'all .3s ease', flexShrink: 0,
                 }}
               />
             ))}
@@ -369,13 +385,13 @@ export default function StoryPhase({ onComplete, audioEnabled }) {
             <button
               onClick={() => goSlide(slide + 1)}
               style={{
-                display: 'flex', alignItems: 'center', gap: 5,
-                padding: '9px 24px', borderRadius: 10, border: 'none',
+                display: 'flex', alignItems: 'center', gap: 6,
+                padding: '10px 28px', borderRadius: 999, border: 'none',
                 background: '#f5c518', color: '#0d0620',
-                fontFamily: 'var(--font)', fontWeight: 800, fontSize: '0.85rem',
+                fontFamily: 'var(--font)', fontWeight: 900, fontSize: '0.98rem',
                 cursor: 'pointer',
-                boxShadow: '0 4px 16px rgba(245,197,24,.35)',
-                transition: 'all .18s',
+                boxShadow: '0 4px 18px rgba(245,197,24,.45)',
+                transition: 'all .18s ease',
               }}
             >
               Next →
@@ -384,12 +400,12 @@ export default function StoryPhase({ onComplete, audioEnabled }) {
             <button
               onClick={onComplete}
               style={{
-                display: 'flex', alignItems: 'center', gap: 5,
-                padding: '9px 20px', borderRadius: 10, border: 'none',
+                display: 'flex', alignItems: 'center', gap: 6,
+                padding: '10px 28px', borderRadius: 999, border: 'none',
                 background: '#f5c518', color: '#0d0620',
-                fontFamily: 'var(--font)', fontWeight: 800, fontSize: '0.85rem',
+                fontFamily: 'var(--font)', fontWeight: 900, fontSize: '0.98rem',
                 cursor: 'pointer',
-                boxShadow: '0 4px 16px rgba(245,197,24,.35)',
+                boxShadow: '0 4px 18px rgba(245,197,24,.45)',
               }}
             >
               Simulate 🧪

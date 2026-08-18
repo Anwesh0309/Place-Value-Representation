@@ -18,7 +18,7 @@ export const audioMap = {
   "Big numbers can be tricky! But I know a secret...": "/assets/audio/audio_big_numbers_can_be_tricky_but_i_know_a_secret_4.mp3",
   "We can break them into hundreds, tens, and ones!": "/assets/audio/audio_we_can_break_them_into_hundreds_tens_and_ones_5.mp3",
   "Watch what happens when we group the marbles together.": "/assets/audio/audio_watch_what_happens_when_we_group_the_marbles_together_6.mp3",
-  "Emma loves collecting stickers. She has so many, she needs to organise them! Can you help her count?": "/assets/audio/audio_mei_ling_loves_collecting_stickers_she_has_so_many_she_needs_7.mp3",
+  "Emma loves collecting stickers. She has so many, she needs to organise them! Can you help her count?": "/assets/audio/audio_emma_loves_collecting_stickers_she_has_so_many_she_needs_to__7.mp3",
   "She puts them into albums. Each album holds one hundred stickers. She has three albums — that is 300 stickers!": "/assets/audio/audio_she_puts_them_into_albums_each_album_holds_one_hundred_stick_8.mp3",
   "She also has four strips of ten stickers. That is 40 more stickers!": "/assets/audio/audio_she_also_has_four_strips_of_ten_stickers_that_is_40_more_sti_9.mp3",
   "And she has 7 single stickers too. These are the ones — the last digits!": "/assets/audio/audio_and_she_has_7_single_stickers_too_these_are_the_ones_the_las_10.mp3",

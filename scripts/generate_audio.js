@@ -22,16 +22,16 @@ function loadEnv() {
 }
 
 const VOICE_ID = 'Xb7hH8MSUJpSbSDYk0k2';
-const MODEL    = 'eleven_multilingual_v2';
+const MODEL = 'eleven_multilingual_v2';
 
 const VOICE_SETTINGS = {
-  celebration:  { stability:0.12, similarity_boost:0.45, style:0.75, use_speaker_boost:true },
-  encouragement:{ stability:0.16, similarity_boost:0.50, style:0.65, use_speaker_boost:true },
-  question:     { stability:0.20, similarity_boost:0.55, style:0.55, use_speaker_boost:true },
-  emphasis:     { stability:0.16, similarity_boost:0.50, style:0.60, use_speaker_boost:true },
-  thinking:     { stability:0.24, similarity_boost:0.60, style:0.35, use_speaker_boost:true },
-  statement:    { stability:0.20, similarity_boost:0.55, style:0.50, use_speaker_boost:true },
-  instruction:  { stability:0.20, similarity_boost:0.55, style:0.50, use_speaker_boost:true },
+  celebration: { stability: 0.12, similarity_boost: 0.45, style: 0.75, use_speaker_boost: true },
+  encouragement: { stability: 0.16, similarity_boost: 0.50, style: 0.65, use_speaker_boost: true },
+  question: { stability: 0.20, similarity_boost: 0.55, style: 0.55, use_speaker_boost: true },
+  emphasis: { stability: 0.16, similarity_boost: 0.50, style: 0.60, use_speaker_boost: true },
+  thinking: { stability: 0.24, similarity_boost: 0.60, style: 0.35, use_speaker_boost: true },
+  statement: { stability: 0.20, similarity_boost: 0.55, style: 0.50, use_speaker_boost: true },
+  instruction: { stability: 0.20, similarity_boost: 0.55, style: 0.50, use_speaker_boost: true },
 };
 
 // ── COMPLETE phrase list — every narrated text in the app ──────────────────
@@ -118,38 +118,38 @@ const phrases = [
   { text: "You completed all five phases. Excellent work today!", style: 'celebration' },
 
   // ── NUMBER NARRATION — digits 0–9 ──
-  { text: "Zero",  style: 'statement' },
-  { text: "One",   style: 'statement' },
-  { text: "Two",   style: 'statement' },
+  { text: "Zero", style: 'statement' },
+  { text: "One", style: 'statement' },
+  { text: "Two", style: 'statement' },
   { text: "Three", style: 'statement' },
-  { text: "Four",  style: 'statement' },
-  { text: "Five",  style: 'statement' },
-  { text: "Six",   style: 'statement' },
+  { text: "Four", style: 'statement' },
+  { text: "Five", style: 'statement' },
+  { text: "Six", style: 'statement' },
   { text: "Seven", style: 'statement' },
   { text: "Eight", style: 'statement' },
-  { text: "Nine",  style: 'statement' },
+  { text: "Nine", style: 'statement' },
 
   // ── NUMBER NARRATION — tens ──
-  { text: "Ten",     style: 'statement' },
-  { text: "Twenty",  style: 'statement' },
-  { text: "Thirty",  style: 'statement' },
-  { text: "Forty",   style: 'statement' },
-  { text: "Fifty",   style: 'statement' },
-  { text: "Sixty",   style: 'statement' },
+  { text: "Ten", style: 'statement' },
+  { text: "Twenty", style: 'statement' },
+  { text: "Thirty", style: 'statement' },
+  { text: "Forty", style: 'statement' },
+  { text: "Fifty", style: 'statement' },
+  { text: "Sixty", style: 'statement' },
   { text: "Seventy", style: 'statement' },
-  { text: "Eighty",  style: 'statement' },
-  { text: "Ninety",  style: 'statement' },
+  { text: "Eighty", style: 'statement' },
+  { text: "Ninety", style: 'statement' },
 
   // ── NUMBER NARRATION — hundreds ──
-  { text: "One hundred",   style: 'statement' },
-  { text: "Two hundred",   style: 'statement' },
+  { text: "One hundred", style: 'statement' },
+  { text: "Two hundred", style: 'statement' },
   { text: "Three hundred", style: 'statement' },
-  { text: "Four hundred",  style: 'statement' },
-  { text: "Five hundred",  style: 'statement' },
-  { text: "Six hundred",   style: 'statement' },
+  { text: "Four hundred", style: 'statement' },
+  { text: "Five hundred", style: 'statement' },
+  { text: "Six hundred", style: 'statement' },
   { text: "Seven hundred", style: 'statement' },
   { text: "Eight hundred", style: 'statement' },
-  { text: "Nine hundred",  style: 'statement' },
+  { text: "Nine hundred", style: 'statement' },
 
   // ── NUMBER NARRATION — simulation target numbers ──
   { text: "247", style: 'statement' },
@@ -209,13 +209,13 @@ async function main() {
   const audioMap = {};
   let idx = 0;
   let generated = 0;
-  let skipped   = 0;
+  let skipped = 0;
 
   for (const { text, style } of phrases) {
-    const slug     = slugify(text);
+    const slug = slugify(text);
     const filename = `audio_${slug}_${idx}.mp3`;
     const filePath = path.join(audioDir, filename);
-    const webPath  = `/assets/audio/${filename}`;
+    const webPath = `/assets/audio/${filename}`;
 
     if (fs.existsSync(filePath)) {
       console.log(`⏭  [${idx}] Skipping: ${filename}`);

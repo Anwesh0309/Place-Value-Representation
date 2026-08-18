@@ -14,7 +14,7 @@ const PHASES = [
   { id: 'wonder',   label: 'Wonder',   emoji: '🔮' },
   { id: 'story',    label: 'Story',    emoji: '📖' },
   { id: 'simulate', label: 'Simulate', emoji: '🧪' },
-  { id: 'play',     label: 'Play',     emoji: '🎮' },
+  { id: 'play',     label: 'Practice', emoji: '🎮' },
   { id: 'reflect',  label: 'Reflect',  emoji: '📓' },
 ];
 
@@ -162,7 +162,7 @@ export default function App() {
     <div style={{ position: 'relative', height: '100vh', overflow: 'hidden' }}>
       <FloatingNumbers />
 
-      {/* ── Floating header row — Home | Pill Nav | X ── */}
+      {/* ── Floating header row — Home | Pill Nav + Mute Beside | X ── */}
       {showBar && (
         <div className="header-row">
           {/* Home button — left */}
@@ -170,32 +170,40 @@ export default function App() {
             🏠 Home
           </button>
 
-          {/* Floating pill — phase steps + audio */}
-          <div className="phase-pill">
-            {PHASES.map((p, idx) => {
-              const isActive   = state.phase === p.id;
-              const isComplete = state.phaseComplete[p.id];
-              return (
-                <div key={p.id} className="phase-step">
-                  <div className="phase-step-inner">
-                    <div className={`phase-step-num${isActive ? ' is-active' : isComplete ? ' is-done' : ''}`}>
-                      {isComplete ? '✓' : idx + 1}
-                    </div>
-                    <span className="phase-step-emoji">{p.emoji}</span>
-                    <span className={`phase-step-label${isActive ? ' is-active' : isComplete ? ' is-done' : ''}`}>
-                      {p.label}
-                    </span>
+          {/* Center group — floating pill nav + mute button directly beside it */}
+          <div className="nav-group">
+            <div className="phase-pill">
+              {PHASES.map((p, idx) => {
+                const isActive   = state.phase === p.id;
+                const isComplete = state.phaseComplete[p.id];
+                return (
+                  <div key={p.id} className="phase-step">
+                    <button
+                      className="phase-step-inner"
+                      onClick={() => go(p.id)}
+                      title={`Navigate to ${p.label}`}
+                      aria-label={`Navigate to ${p.label} phase`}
+                    >
+                      <div className={`phase-step-num${isActive ? ' is-active' : isComplete ? ' is-done' : ''}`}>
+                        {isComplete ? '✓' : idx + 1}
+                      </div>
+                      <span className="phase-step-emoji">{p.emoji}</span>
+                      <span className={`phase-step-label${isActive ? ' is-active' : isComplete ? ' is-done' : ''}`}>
+                        {p.label}
+                      </span>
+                    </button>
+                    {idx < PHASES.length - 1 && <span className="phase-step-dash" />}
                   </div>
-                  {idx < PHASES.length - 1 && <span className="phase-step-dash" />}
-                </div>
-              );
-            })}
+                );
+              })}
+            </div>
 
-            {/* Audio toggle inside pill */}
+            {/* Mute button placed directly beside the nav bar */}
             <button
-              className={`audio-btn${state.audioEnabled ? ' on' : ''}`}
+              className={`audio-btn-beside${state.audioEnabled ? ' on' : ''}`}
               onClick={() => dispatch({ type: 'TOGGLE_AUDIO' })}
-              aria-label={state.audioEnabled ? 'Mute' : 'Unmute'}
+              aria-label={state.audioEnabled ? 'Mute audio' : 'Unmute audio'}
+              title={state.audioEnabled ? 'Mute audio' : 'Unmute audio'}
             >
               {state.audioEnabled ? '🔊' : '🔇'}
             </button>
